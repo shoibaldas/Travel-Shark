@@ -1,0 +1,126 @@
+﻿@model TourismManagementSystem.Models.BookModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="booking" class="section">
+    <div class="section-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="booking-form">
+                    <div class="form-header">
+                        <h1>Make your reservation</h1>
+                    </div>
+                    <form asp-action="Booking">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input asp-for="From" class="form-control" type="text" placeholder="From">
+                                    <span asp-validation-for="From" class="form-label">From</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input asp-for="Destination" class="form-control" placeholder="Destination" />
+                                    <span asp-validation-for="Destination" class="form-label">Destination</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input asp-for="CheckIn" class="form-control" type="date" required>
+                                    <span asp-validation-for="CheckIn" class="form-label">Check In</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input asp-for="CheckOut" class="form-control" type="date" required>
+                                    <span asp-validation-for="CheckOut" class="form-label">Check Out</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select asp-for="Room" class="form-control" required>
+                                        <option value="" selected hidden>no of rooms</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select> <span asp-validation-for="Room" class="select-arrow"></span> <span class="form-label">Rooms</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select asp-for="Adults" class="form-control" required>
+                                        <option value="" selected hidden>no of adults</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select> <span asp-validation-for="Adults" class="select-arrow"></span> <span class="form-label">Adults</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select asp-for="Child" class="form-control" required>
+                                        <option value="" selected hidden>no of children</option>
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select> <span asp-validation-for="Child" class="select-arrow"></span> <span class="form-label">Children</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select asp-for="HotelPackage" class="form-control" required>
+                                        <option value="" selected hidden>Select hotel room package</option>
+                                        <option>None</option>
+                                        <option>Basic</option>
+                                        <option>Standard</option>
+                                        <option>Premium</option>
+                                    </select> <span asp-validation-for="HotelPackage" class="select-arrow"></span> <span class="form-label">Package</span>
+                                </div>
+                            </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <select asp-for="VechiclePackage" class="form-control" required>
+                                        <option value="" selected hidden>Select travel vehicle</option>
+                                        <option>None</option>
+                                        <option>Bus(AC)</option>
+                                        <option>Bus(Non-AC)</option>
+                                    </select> <span asp-validation-for="VechiclePackage" class="select-arrow"></span> <span class="form-label">Vehicle</span>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        @*<div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input asp-for="Email" class="form-control" type="text" placeholder="Email">
+                                    <span asp-validation-for="Email" class="form-label">From</span>
+                                </div>
+                                </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input asp-for="PhoneNumber" class="form-control" type="text" placeholder="Phone Number">
+                                    <span asp-validation-for="PhoneNumber" class="form-label">From</span>
+                                </div>
+                            </div>
+                        </div>*@
+                       
+                        <div class="form-btn"> <button class="submit-btn">Book Now</button> </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

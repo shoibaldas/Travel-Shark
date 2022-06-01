@@ -1,0 +1,41 @@
+﻿@model TourismManagementSystem.Models.IdentityModels.ApplicationUser
+
+@{
+    ViewData["Title"] = "AdminPanel";
+    Layout = "~/Views/Shared/_LayoutAddition.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card-counter primary">
+                <i class="fa fa-code-fork"></i>
+                <span class="count-numbers">@ViewBag.BookCount</span>
+                <span class="count-name">Total Booking</span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card-counter danger">
+                <i class="fa fa-ticket"></i>
+                <span class="count-numbers">@ViewBag.PendingBookingCount</span>
+                <span class="count-name">Pending</span>
+            </div>
+        </div>
+
+        @*<div class="col-md-3">
+            <div class="card-counter success">
+                <i class="fa fa-database"></i>
+                <span class="count-numbers"></span>
+                <span class="count-name">Data</span>
+            </div>
+        </div>*@
+
+        <div class="col-md-3">
+            <div class="card-counter info">
+                <i class="fa fa-users"></i>
+                <span class="count-numbers">@ViewBag.UserCount</span>
+                <span class="count-name">Users</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "BookingIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="thankyou-page">
+    <div class="_header">
+        <h1>Thank You!</h1>
+    </div>
+    <div class="_body">
+        <div class="_box">
+            <h2>
+                <strong>Please check your email</strong> later for the booking confirmation and payment instruction.
+            </h2>
+            <p>
+                To get the confirmation of your requested booking, you will be instructed to pay the fair amount for your reservation. We will contact with you soon, please keep patience.
+            </p>
+        </div>
+    </div>
+    <div class="_footer">
+        <p>Having trouble? <a asp-area="" asp-controller="Home" asp-action="ContuctUs">Contact us</a> </p>
+
+        <a asp-area="" asp-controller="Home" asp-action="Index">
+            <input type="button" class="btn" name="submit" value="Back To Homepage">
+        </a>
+    </div>
+</div>
+

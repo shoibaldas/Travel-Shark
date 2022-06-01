@@ -1,0 +1,40 @@
+﻿@model TourismManagementSystem.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container login-container">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col-md-6 login-form-2">
+            <form asp-action="Login">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group centered">
+                    <input asp-for="Email" class="form-control" placeholder="Your Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group centered">
+                    <input asp-for="Password" class="form-control" placeholder="Your Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-group centered">
+                    <div class="checkbox">
+                        <label asp-for="RememberMe" class="control-label"></label>
+                        <input type="checkbox" asp-for="RememberMe" value="RememberMe" id="RememberMe" name="RememberMe" />
+                        <span asp-validation-for="RememberMe" class="text-white"></span>
+                    </div>
+                </div>
+                <div class="form-group centered">
+                    <input type="submit" value="Log In" class="btnSubmit" />
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+
